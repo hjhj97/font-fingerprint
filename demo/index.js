@@ -1,4 +1,7 @@
 import getFingerprint from "../dist/index.js";
 
 const fonts = getFingerprint();
-console.log(fonts);
+
+const pre = document.createElement("pre");
+pre.textContent = JSON.stringify(fonts, null, 2);
+document.body.appendChild(pre);

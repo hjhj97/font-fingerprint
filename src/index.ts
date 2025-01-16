@@ -1,9 +1,10 @@
 import getFont from "./components/font";
+import hash from "hash.js";
 
 const getFingerprint = () => {
   const font = getFont();
   return {
-    visitorId: "test",
+    visitorId: hash.sha256().update(font).digest("hex"),
     components: {
       font,
     },

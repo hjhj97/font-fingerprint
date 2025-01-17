@@ -2,13 +2,43 @@ import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
 import nodeResolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import { dts } from "rollup-plugin-dts";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
-export default {
-  input: "src/index.ts",
-  output: {
-    file: "dist/index.js",
-    format: "es",
-    sourcemap: true,
+//import pkg from "./package.json";
+
+const config = [
+  {
+    input: "src/index.ts",
+    output: [
+      {
+        file: "dist/index.esm.js",
+        format: "es",
+        sourcemap: true,
+      },
+      {
+        file: "dist/index.js",
+        format: "cjs",
+        sourcemap: true,
+      },
+    ],
+    //external: Object.keys(pkg.dependencies),
+    plugins: [
+      typescript(),
+      nodeResolve(),
+      terser(),
+      commonjs(),
+      peerDepsExternal(),
+    ],
   },
-  plugins: [typescript(), nodeResolve(), terser(), commonjs()],
-};
+  {
+    input: "src/index.d.ts",
+    output: {
+      file: "dist/index.d.ts",
+      format: "es",
+    },
+    plugins: [dts()],
+  },
+];
+
+export default config;

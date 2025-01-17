@@ -1,7 +1,7 @@
 interface FingerprintResult {
   visitorId: string;
   components: {
-    [key: string]: string;
+    [key: string]: unknown | unknown[];
   };
 }
 

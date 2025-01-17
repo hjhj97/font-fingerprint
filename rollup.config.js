@@ -5,8 +5,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import { dts } from "rollup-plugin-dts";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
-//import pkg from "./package.json";
-
 const config = [
   {
     input: "src/index.ts",
@@ -22,7 +20,6 @@ const config = [
         sourcemap: true,
       },
     ],
-    //external: Object.keys(pkg.dependencies),
     plugins: [
       typescript(),
       nodeResolve(),

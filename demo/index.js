@@ -1,4 +1,4 @@
-import getFingerprint from "../dist/index.js";
+import getFingerprint from "../dist/index.esm.js";
 
 const fonts = getFingerprint();
 

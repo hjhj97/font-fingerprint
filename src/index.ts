@@ -4,7 +4,7 @@ import hash from "hash.js";
 const getFingerprint = () => {
   const font = getFont();
   return {
-    visitorId: hash.sha256().update(font).digest("hex"),
+    visitorId: hash.sha1().update(font).digest("hex"),
     components: {
       font,
     },

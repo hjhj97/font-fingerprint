@@ -1,6 +1,5 @@
 # font-fingerprint
 
-[![jsdelivr](https://data.jsdelivr.com/v1/package/npm/font-fingerprint/badge)](https://www.jsdelivr.com/package/npm/font-fingerprint)
 [![npm](https://img.shields.io/npm/v/font-fingerprint)](https://www.npmjs.com/package/font-fingerprint)
 
 `font-fingerprint` is a library that generates a unique identifier for each visitor based on the installed fonts of the browser.

@@ -1,7 +1,7 @@
 {
   "name": "font-fingerprint",
   "description": "font-fingerprint is a library that generates a unique identifier for each visitor based on the font of the browser.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
